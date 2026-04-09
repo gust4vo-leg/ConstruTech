@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+
+.tabela-produto {
+    margin: 20px auto;
+    background-color: rgb(2, 2, 71);
+    max-width: 100rem;
+    width: 100%;
+
+}
+
+.linha {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    align-items: center;
+    padding: 18px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: #e6edf3;
+}
+
+.linha-cabecalho {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding: 20px 10px;
+    font-weight: bolder;
+    font-size: 18px;
+    color: orange;
+}
+
+.nome {
+    margin-bottom: 25px;
+    margin-left: 35px;
+}
+
+.categoria,
+.quantidade, 
+.preco, 
+.preco-total {
+    margin-bottom: 25px;
+    text-align: center;
+}
