@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produtos</title>
+    <link rel="stylesheet" href="./css/cadastro_produtos.css">
+    <link rel="stylesheet" href="css/header_footer.css">
+</head>
+<body>
+    <?php 
+    require_once('./partials/header.php')
+    ?>
+
+    <main>
+        <div class="box">
+            <div class="fundo-branco">
+                <img src="./imagens/icone_cadastro.png">
+                <label><i>Adicione produtos com facilidade!</i></label>
+            </div>
+
+            <div class="div-form">
+                <h1>Cadastro de Produtos</h1>
+
+                <form action="">
+                    <input type="text" class="nome" placeholder="*Nome Completo">
+                    <input type="text" class="preco-qtd" placeholder="*Preço">
+                    <input type="text" class="preco-qtd" placeholder="*Qtd. em estoque"> <br>
+
+                    <select name="" id="">
+                        <option value="">Selecione a categoria</option>
+                        <option value="bruto">Bruto</option>
+                        <option value="ferramentas">Ferramentas</option>
+                        <option value="acabamento">Acabamento</option>
+                    </select>
+
+                    <input type="text" class="url" placeholder="*URL da imagem">
+                    <textarea name="" id="" placeholder="Descrição do produto"></textarea> <br>
+
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Limpar</button>
+                    
+                </form>
+            </div>
+        </div>
+    </main>
+    <?php 
+    require_once('./partials/footer.php')
+    ?>
+</body>
+</html>

@@ -1,31 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Constru Tech</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="imagens/logo.png">
+    <title>Document</title>
 </head>
-
 <body>
-    <header class="topo">
-        <div class="topo-menu">
-            <div class="topo-esquerdo">
-                <a href="index.html">
-                    <img src="imagens/logo2.png" class="logo" alt="Logo">
-                </a>
-            </div>
-            <div class="topo-direito">
-                <a href="#" class="">Adicionar Produto</a>
-                <a href="#" class="cadastrar">Cadastrar-se</a>
-            </div>
-        </div>
-    </header>
-    <main>
-        <a href="tabela-tuch.php">Aqui</a>
-    </main>
     <footer>
         <div class="main-footer">
             <div class="row">
@@ -101,5 +81,4 @@
         </div>
     </footer>
 </body>
-
 </html>

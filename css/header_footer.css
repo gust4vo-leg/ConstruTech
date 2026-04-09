@@ -1,0 +1,130 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Century Gothic", sans-serif;
+    background: rgb(245, 245, 245);
+}
+
+.topo {
+    background-color: rgb(2, 2, 71);
+    border-bottom: 2px solid orange;
+}
+
+.topo-menu {
+    display: flex;
+    justify-content: space-around;
+    max-width: 180rem;
+    margin: 0 auto;
+}
+
+.topo-esquerdo img {
+    height: 10vh;
+}
+
+.topo-direito {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    margin-right: 1rem;
+}
+
+.topo-direito a {
+    color: white;
+    text-decoration: none;
+    background-color: orange;
+    padding: 10px;
+    border-radius: 7px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.topo-direito a:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease;
+}
+
+.main-footer {
+    border-top: 3px solid orange;
+    background: rgb(2, 2, 71);
+    padding: 60px 20px;
+}
+
+.row {
+
+    font-size: 1rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    justify-items: center;
+    align-items: center;  
+    text-align: left;   
+}
+
+.col-footer h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: orange;
+}
+
+.col-footer li {
+    list-style: none;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.col-footer li:hover {
+    color: orange;
+}
+
+.detalhes summary{
+    cursor: pointer;
+    color: orange;
+    font-weight: 500;
+    list-style: none;
+}
+
+.detalhes details {
+    margin-bottom: 10px;
+}
+
+.detalhes p {
+    color: #aaa;
+    font-size: 14px;
+    padding: 3px;
+}
+
+.detalhes p:hover {
+    color: orange;
+}
+
+.arrow {
+    display: inline-block;
+    border: 1px solid orange;
+    border-width: 0 2px 2px 0;
+    padding: 3px;
+    margin-left: 6px;
+    margin-bottom: 2px;
+    transform: rotate(45deg);
+} 
+
+.barra {
+    border-top: 2px solid orange;
+    text-align: center;
+    background: rgb(2, 2, 71);
+    color: #aaa;
+}
+
+.paragrafo-footer {
+    padding: 10px;
+}
+
+.logo-footer img {
+    height: 11vh;
+}
