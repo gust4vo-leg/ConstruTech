@@ -22,20 +22,21 @@
             <div class="div-form">
                 <h1>Cadastro de Produtos</h1>
 
-                <form action="">
-                    <input type="text" class="nome" placeholder="*Nome Completo">
-                    <input type="text" class="preco-qtd" placeholder="*Preço">
-                    <input type="text" class="preco-qtd" placeholder="*Qtd. em estoque"> <br>
+                <form action="#" method="POST">
+                    <input type="text" class="nome" placeholder="*Nome Completo" name="nome">
+                    <input type="text" class="preco-qtd" placeholder="*Preço" name="preco">
+                    <input type="text" class="preco-qtd" placeholder="*Qtd. em estoque" name="quantidade"> <br>
 
-                    <select name="" id="">
-                        <option value="">Selecione a categoria</option>
-                        <option value="bruto">Bruto</option>
-                        <option value="ferramentas">Ferramentas</option>
-                        <option value="acabamento">Acabamento</option>
+                    <select name="categoria">
+                        <option value="Selecione categoria">Selecione a categoria</option>
+                        <option value="Bruto">Bruto</option>
+                        <option value="Ferramentas">Ferramentas</option>
+                        <option value="Acabamento">Acabamento</option>
                     </select>
 
-                    <input type="text" class="url" placeholder="*URL da imagem">
-                    <textarea name="" id="" placeholder="Descrição do produto"></textarea> <br>
+                    <input type="text" class="url" placeholder="*URL da imagem"
+                    name="imagem">
+                    <textarea name="descricao" placeholder="Descrição do produto"></textarea> <br>
 
                     <button type="submit">Enviar</button>
                     <button type="reset">Limpar</button>
