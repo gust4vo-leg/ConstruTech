@@ -67,6 +67,9 @@ h4 {
 }
 
 button {
+    color: aliceblue;
+    padding: 10px;
+    border-radius: 6px;
     background: transparent;
     border: none;
     font-size: 18px;
