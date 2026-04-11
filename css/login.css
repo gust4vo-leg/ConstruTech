@@ -11,6 +11,10 @@ body {
     background: rgb(245, 245, 245);
 }
 
+body.lock {
+    overflow: hidden;
+}
+
 main {
     min-height: calc(105vh - 100px);
     display: flex;
@@ -18,6 +22,22 @@ main {
     align-items: center;
     flex-direction: column;
     text-align: center;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.7);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999;
 }
 
 .card {

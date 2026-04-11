@@ -35,7 +35,7 @@
                     </div>
                     <button>Cadastrar-se</button>
 
-                    <p>Já tem conta? <a href="#">Entrar</a></p>
+                    <p>Já tem conta? <a href="login.php">Entrar</a></p>
                 </form>
             </div>
         </sectio>

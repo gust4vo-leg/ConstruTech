@@ -19,7 +19,6 @@
             </div>
             <div class="topo-direito">
                 <a href="cadastro_produtos.php" class="">Adicionar Produto</a>
-                <a href="cadastro.php" class="cadastrar">Cadastrar-se</a>
             </div>
         </div>
     </header>
