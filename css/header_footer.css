@@ -47,85 +47,22 @@ body {
     transition: 0.3s ease;
 }
 
-.main-footer {
-    border-top: 3px solid orange;
-    background: rgb(2, 2, 71);
-    padding: 60px 20px;
-}
-
-.row {
-
-    font-size: 1rem;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    justify-items: center;
-    align-items: center;  
-    text-align: left;   
-}
-
-.col-footer h4 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    color: orange;
-}
-
-.col-footer li {
-    list-style: none;
-    margin-bottom: 8px;
-    font-size: 1rem;
-    color: #aaa;
-    cursor: pointer;
-}
-
-.col-footer li:hover {
-    color: orange;
-}
-
-.detalhes summary{
-    cursor: pointer;
-    color: orange;
-    font-weight: 500;
-    list-style: none;
-}
-
-.detalhes details {
-    margin-bottom: 10px;
-}
-
-.detalhes p {
-    color: #aaa;
-    font-size: 14px;
-    padding: 3px;
-}
-
-.detalhes p:hover {
-    color: orange;
-}
-
-.arrow {
-    display: inline-block;
-    border: 1px solid orange;
-    border-width: 0 2px 2px 0;
-    padding: 3px;
-    margin-left: 6px;
-    margin-bottom: 2px;
-    transform: rotate(45deg);
-} 
-
 .barra {
     border-top: 2px solid orange;
     text-align: center;
     background: rgb(2, 2, 71);
     color: #aaa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .paragrafo-footer {
     text-align: center;
-    padding: 10px;
+    padding-bottom: 1rem;
 }
 
-.logo-footer img {
+.logo-footer {
     height: 11vh;
+    margin-bottom: -45px;
 }
