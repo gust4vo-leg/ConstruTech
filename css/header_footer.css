@@ -2,11 +2,16 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Century Gothic", sans-serif;
 }
 
 body {
     font-family: "Century Gothic", sans-serif;
     background: rgb(245, 245, 245);
+}
+
+body.navegacao open{
+    overflow: hidden;
 }
 
 .topo {
@@ -28,7 +33,6 @@ body {
 .topo-direito {
     align-items: center;
     display: flex;
-    gap: 10px;
     margin-right: 1rem;
 }
 
@@ -47,22 +51,233 @@ body {
     transition: 0.3s ease;
 }
 
+.main-footer {
+    border-top: 3px solid orange;
+    background: rgb(2, 2, 71);
+    padding: 60px 20px;
+}
+
+.row {
+    font-size: 1rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    justify-items: center;
+    align-items: center;  
+    text-align: left;   
+}
+
+.col-footer h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: orange;
+}
+
+.col-footer li {
+    list-style: none;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.col-footer li:hover {
+    color: orange;
+}
+
+.detalhes{
+    padding-bottom: 2rem;
+}
+
+.detalhes summary{
+    cursor: pointer;
+    gap: 0;
+    color: #aaa;
+    font-weight: 500;
+    list-style: none;
+    margin-bottom: -2rem;
+}
+
+.detalhes-footer{
+    gap: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.detalhes p {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: -2rem;
+}
+
+.detalhes p:hover {
+    color: orange;
+}
+
+.arrow {
+    display: inline-block;
+    border: 1px solid #aaa;
+    border-width: 0 2px 2px 0;
+    padding: 3px;
+    margin-left: 6px;
+    margin-bottom: 2px;
+    transform: rotate(45deg);
+} 
+
 .barra {
     border-top: 2px solid orange;
     text-align: center;
     background: rgb(2, 2, 71);
     color: #aaa;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .paragrafo-footer {
-    text-align: center;
-    padding-bottom: 1rem;
+    padding: 10px;
+    margin-top: 0;
 }
 
-.logo-footer {
+.logo-footer img {
     height: 11vh;
-    margin-bottom: -45px;
+}
+
+.sidebar{
+    position: absolute;
+    right: 0vh;
+    top: -1.5vh;
+}
+
+.sidebar img{
+    width: 7vw;
+    height: auto;
+}
+
+.navegacao {
+    height: 100%;
+    background-color: rgb(2, 2, 71);
+    border: 0px solid;
+    border-left: 2px solid orange;
+    box-shadow: 0 0 5px orange;
+    color: white;
+    width: 17vw;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(100%); 
+    animation: entrada 0.6s ease-out forwards;
+    z-index: 1001;
+}
+
+.barra {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+}
+
+@keyframes entrada {
+    to {
+        transform: translateX(0);
+    }
+}
+
+.container-voltar{
+    width: 100%;
+    text-align: right;
+    margin-top: 3vh;
+}
+
+.voltar{
+    margin-right: 2vw;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.perfil{
+    margin-top: 3.5vh;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
+.perfil i{
+    justify-content: center;
+    text-align: center;
+    font-size: 8rem;
+}
+
+.perfil h1{
+    margin-top: 1.5vh;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.container-elementos{
+    display: flex;
+    justify-content: center;
+    margin-top: 16vh;
+}
+
+.container-elementos ul{
+    list-style: none;
+    text-align: left;
+}
+
+.container-elementos li{
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+    transition: ease 0.3s;
+}
+
+.container-elementos li:hover{
+    transform: scale(1.1);
+}
+
+.container-elementos li a{
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: ease 0.3s;
+}
+
+.container-elementos li a:hover{
+    text-shadow: 0 0 15px white;
+}
+
+.emergencia{
+    margin-top: 75%;
+    color: orange;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: right;
+    margin-right: 1vw;
+}
+
+.emergencia i{
+    font-size: 1.2rem;
+}
+
+.emergencia a{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6vh;
+    width: 6vh;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: orange;
+}
+
+.preto{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 0px solid;
+    z-index: 1000;
+    animation: ease-in 0.7s;
 }

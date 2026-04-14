@@ -7,6 +7,7 @@
     <title>Constru Tech</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="imagens/logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
 </head>
 
 <body>
@@ -17,10 +18,46 @@
                     <img src="imagens/logo2.png" class="logo" alt="Logo">
                 </a>
             </div>
-            <div class="topo-direito">
+             <div class="topo-direito">
                 <a href="cadastro_produtos.php" class="">Adicionar Produto</a>
             </div>
+
+            <a href="" onclick="exibir()" class="sidebar"><img src="./imagens/icon_sidebar.png"/></a>
         </div>
+
+         <div class="navegacao" id="navegacao" style="display: none;">
+        <div class="container-voltar">
+            <a class="voltar" href="" onclick="location.reload()"> <i class="bi bi-escape"></i> </a>
+        </div>
+        <div class="perfil">
+            <i class="bi bi-person-circle"></i>
+
+            <h1>Nome Sobrenome</h1>
+        </div>
+
+        <div class="container-elementos">
+            <ul>
+                <li><a href=""><i class="bi bi-stack"></i> &nbsp; Inventário</a></li>
+                <li><a href=""><i class="bi bi-building-fill-gear"></i> &nbsp; Dashboard</a></li>
+                <li><a href=""><i class="bi bi-sliders"></i> &nbsp; Configurações</a></li>
+            </ul>
+        </div>
+
+        <div class="emergencia">
+            <a href=""><i class="bi bi-telephone-fill"></i></a>
+        </div>
+    </div>
+
+    <div class="preto" id="preto" style="display: none;"></div>
+
+    <script>
+        function exibir() {
+            event.preventDefault();
+            document.getElementById("navegacao").style.display = "block"
+            document.getElementById("preto").style.display = "block"
+            document.body.style.overflow = "hidden";
+        }
+    </script>
     </header>
 </body>
 

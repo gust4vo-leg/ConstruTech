@@ -17,7 +17,7 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./css/header_footer.css">
-    <title>Home - Constru Tech</title>
+    <title>Home - ConstruTech</title>
 </head>
 
 <body>
@@ -39,7 +39,7 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
                             <label>Senha</label>
                         </div>
 
-                        <button type="submit">Entrar</button>
+                        <button class="btn-login"type="submit">Entrar</button>
 
                         <p>Ainda não tem conta? <a href="cadastro.php">Criar conta</a></p>
                     </form>
