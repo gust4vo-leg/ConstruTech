@@ -13,29 +13,42 @@ body {
 
 .tabela-produto {
     margin: 20px auto;
-    background-color: rgb(2, 2, 71);
-    max-width: 100rem;
+    max-width: 75rem;
     width: 100%;
-
+    max-height: 90vh;
+    overflow-y: auto;
+    width: 100%;
 }
 
 .linha {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 20px;
     align-items: center;
     padding: 18px 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     color: #e6edf3;
+    background: rgb(2, 2, 71);
+}
+
+.linha:hover {
+    background: rgba(1, 1, 63, 0.781);
+    transition: 0.2s;
 }
 
 .linha-cabecalho {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
     text-align: center;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 20px;
     padding: 20px 10px;
     font-weight: bolder;
     font-size: 18px;
     color: orange;
+    background-color: rgb(2, 2, 71);
+    border-bottom: 1px solid orange;
+    position: sticky;
+    top: 0;
 }
 
 .nome {
@@ -44,9 +57,34 @@ body {
 }
 
 .categoria,
-.quantidade, 
-.preco, 
+.quantidade,
+.preco,
 .preco-total {
     margin-bottom: 25px;
     text-align: center;
+}
+
+.rodape-tabela {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 20px;
+    padding: 20px 10px;
+    font-weight: bolder;
+    font-size: 18px;
+    background-color: rgb(2, 2, 71);
+    border-top: 1px solid orange;
+    position: sticky;
+    bottom: 0;
+    color: white;
+}
+
+.valor {
+    color: orange;
+}
+
+i:hover {
+    color: rgb(204, 8, 8);
+    transition: 0.3s ease;
 }
