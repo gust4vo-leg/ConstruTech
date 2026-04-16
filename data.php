@@ -157,7 +157,7 @@ $produtos_base = [
         'categoria' => 'ferramentas',
         'imagem' => 'imagens/trena.png',
         'quantidade' => 20,
-        'preco' => 30.00,
+        'preco' => 39.90,
         'preco_total' => 600.00
     ],
     [

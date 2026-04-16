@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Constru Tech</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="imagens/logo.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
 </head>
@@ -37,7 +36,8 @@
 
         <div class="container-elementos">
             <ul>
-                <li><a href=""><i class="bi bi-stack"></i> &nbsp; Inventário</a></li>
+                <li><a href="index.php"><i class="bi bi-house-fill"></i> &nbsp; Início</a></li>
+                <li><a href="tabela-tuch.php"><i class="bi bi-stack"></i> &nbsp; Inventário</a></li>
                 <li><a href=""><i class="bi bi-building-fill-gear"></i> &nbsp; Dashboard</a></li>
                 <li><a href=""><i class="bi bi-sliders"></i> &nbsp; Configurações</a></li>
             </ul>

@@ -88,13 +88,13 @@ h4 {
     transition: 0.3s ease;
 }
 
-p {
+p-login {
     margin-top: 35px;
     text-align: justify;
     font-size: 0.9rem;
 }
 
-a {
+a-login {
     text-decoration: none;
 }
 

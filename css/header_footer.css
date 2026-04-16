@@ -87,7 +87,7 @@ body.navegacao open{
 }
 
 .detalhes{
-    padding-bottom: 2rem;
+    /* padding-bottom: 2rem; */
 }
 
 .detalhes summary{
@@ -96,18 +96,18 @@ body.navegacao open{
     color: #aaa;
     font-weight: 500;
     list-style: none;
-    margin-bottom: -2rem;
+    margin-top: 1rem;
 }
 
 .detalhes-footer{
     gap: 0.2rem;
-    margin-bottom: 1rem;
+    /* margin-top: -2rem; */
 }
 
 .detalhes p {
     color: #aaa;
     font-size: 14px;
-    margin-bottom: -2rem;
+    /* margin-bottom: -2rem; */
 }
 
 .detalhes p:hover {
@@ -247,7 +247,7 @@ body.navegacao open{
 }
 
 .emergencia{
-    margin-top: 75%;
+    margin-top: 55%;
     color: orange;
     display: flex;
     gap: 2rem;

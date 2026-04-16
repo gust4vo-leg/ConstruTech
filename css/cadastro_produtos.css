@@ -15,14 +15,12 @@ main{
     display: flex;
     margin-top: 12vh;
     margin-bottom: 12vh;
-    width: 50vw;
+    width: 52vw;
     height: 55vh;
     border: 3px solid orange;
     background-color: rgb(2, 2, 71);
     border-radius: 15px;
-    /* box-shadow: 0 0 5px black; */
     overflow: hidden;
-    
 }
 
 .fundo-branco{
@@ -124,8 +122,18 @@ textarea:focus{
     outline: 1px solid orange;
 }
 
-button{
-    margin-top: 2rem;
+.container-btn{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 10%;
+    margin-top: 1rem;
+    justify-self: center;
+    color: orange;
+}
+
+button.btn {
+    justify-self: center;
     background-color: orange;
     color: white;
     font-weight: bold;
@@ -135,10 +143,8 @@ button{
     font-size: 1rem;
     transition: ease 0.3s;
     cursor: pointer;
-    margin-left: 2%;
 }
 
-button:hover{
+button.btn:hover{
     transform: scale(1.05);
-    box-shadow: 0 0 15px whitesmoke;
 }

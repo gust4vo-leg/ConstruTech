@@ -15,7 +15,7 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/header_footer.css">
     <title>Home - ConstruTech</title>
 </head>
@@ -41,7 +41,7 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
 
                         <button class="btn-login"type="submit">Entrar</button>
 
-                        <p>Ainda não tem conta? <a href="cadastro.php">Criar conta</a></p>
+                        <p class="p-login">Ainda não tem conta? <a class="a-login" href="cadastro.php">Criar conta</a></p>
                     </form>
                 </div>
             </section>
@@ -98,7 +98,7 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
                             <h2>R$ ' . number_format($produto['preco'], 2, ',', '.') . '</h2>
                             <h3>Qtd. em estoque: <span>' . $produto['quantidade'] . '</span></h3>
 
-                            <a href="#" class="detalhes-btn">Ver detalhes</a>
+                            <a href="detalhes.php?id='. $produto['id'] .'" \'class="detalhes-btn">Ver detalhes</a>
                         </div>
                     </article>
                     ';
