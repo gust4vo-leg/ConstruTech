@@ -38,7 +38,7 @@
             <ul>
                 <li><a href="index.php"><i class="bi bi-house-fill"></i> &nbsp; Início</a></li>
                 <li><a href="tabela-tuch.php"><i class="bi bi-stack"></i> &nbsp; Inventário</a></li>
-                <li><a href=""><i class="bi bi-building-fill-gear"></i> &nbsp; Dashboard</a></li>
+                <li><a href="dashboard.php"><i class="bi bi-building-fill-gear"></i> &nbsp; Dashboard</a></li>
                 <li><a href=""><i class="bi bi-sliders"></i> &nbsp; Configurações</a></li>
             </ul>
         </div>

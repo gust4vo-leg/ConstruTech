@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+.titulo-dashboard{
+    margin-left: 23%;
+    margin-top: 4vh;
+    display: flex;
+    align-items: center;
+}
+
+.titulo-dashboard h1{
+    font-size: 1.5rem;
+    color: rgb(2, 2, 71);
+}
+
+.titulo-dashboard .laranja{
+    color: orange;
+}
+
+.divisoria{
+    color: black;
+    border: 1px solid;
+    width: 2vw;
+}
+
+.titulo-dashboard h2{
+    color: #cccccc;
+    font-size: 1.5rem;
+}
+
+.dashboard{
+    margin-top: 5vh;
+    min-height: 80vh;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+    padding-bottom: 8vh;
+}
+
+.container-card{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    height: 20vh;
+    width: 17vw;
+    background-color: rgb(2, 2, 71);
+    border: 0;
+    border-radius: 20px;
+    padding: 20px;
+    transition: ease 0.3s;
+}
+
+.card:hover{
+    /* transform: translateY(-5%); */
+    transform: scale(1.05);
+}
+
+.topo-card{
+    display: flex;
+    align-content: center;
+}
+
+.topo-card span{
+    font-size: 1.3rem;
+    color: orange;
+    margin-left: auto; 
+}
+
+.card h1{
+    color: white;
+    font-size: 1rem;
+}
+
+.card h2{
+    color: white;
+    font-size: 2.2rem;
+    margin-top: 3.5vh;
+    text-align: center;
+}
+
+.card span{
+    color: orange;
+}
