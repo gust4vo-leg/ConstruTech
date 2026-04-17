@@ -1,0 +1,250 @@
+:root {
+    --primary: rgb(2, 2, 71);
+    --barra: orange;
+    --fundo: rgba(245, 245, 245);
+    --fundo-card: rgb(255, 254, 254);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    background: var(--fundo);
+    font-family: 'Intel', sans-serif;
+}
+
+.container {
+    display: flex;
+}
+
+.container-lateral {
+    padding: 20px;
+    background: var(--primary);
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    min-height: 100vh;
+    gap: 10px;
+    justify-content: space-between
+}
+
+.topo-card-lateral {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.342);
+    padding: 0 0 15px;
+    display: flex;
+    margin-right: 10px;
+}
+
+.topo-card-lateral h2 {
+    margin-top: 10px;
+}
+
+.topo-card-lateral img {
+    height: 50px;
+    margin-bottom: -10px;
+}
+
+.lista-card-lateral {
+    margin-bottom: 40rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.342);
+}
+
+.lista-card-lateral nav ul {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lista-card-lateral li {
+    list-style: none;
+}
+
+.lista-card-lateral li a {
+    display: block;
+}
+
+.lista-card-lateral li a:focus {
+    background-color: rgba(255, 255, 255, 0.342);
+    border-right: 3px solid var(--barra);
+    padding: 8px;
+    transition: 0.3s ease;
+}
+
+.exit {
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.342);
+    display: flex;
+    justify-content: space-between;
+}
+
+.aba-config {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.config-topo {
+    margin-left: 12%;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.config-topo h3 {
+    color: #4e4d4d;
+    font-size: 20px;
+}
+
+.config-topo p {
+    font-style: italic;
+    color: #747272;
+}
+
+.card-config {
+    background: var(--fundo-card);
+    padding: 10px;
+    margin: 40px auto;
+    border: 2px solid #aaaaaa1c;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    transform: scale(1.05);
+    max-width: 1200px;
+    width: 76%;
+}
+
+.card-config .texto-topo {
+    font-size: 16px;
+    color: #4e4d4d;
+    padding: 10px;
+    border-bottom: 1px solid #aaa;
+}
+
+.card-config .informacoes {
+    display: flex;
+    gap: 90px;
+}
+
+.card-informacao-lateral {
+    display: flex;
+}
+
+.card-top {
+    background: var(--fundo-card);
+    padding: 10px 13px 35px;
+}
+
+.card-secundario {
+    padding: 0 30px;
+}
+
+.card-secundario h3 {
+    color: #4e4d4d;
+    font-size: 20px;
+    border-bottom: 1px solid #aaa;
+    width: 100%;
+    padding: 10px;
+}
+
+.card-right {
+    background: var(--fundo-card);
+    padding: 10px 13px 35px;
+    max-height: 1200px;
+    height: 28vh;
+}
+
+.campo {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.campo input {
+    max-width: 900px;
+    width: 500px;
+    padding: 10px;
+    border: 1px solid var(--primary);
+    outline: none;
+    border-radius: 6px;
+}
+
+.campo p {
+    border: 1px solid var(--primary);
+    padding: 10px;
+    border-radius: 6px;
+    max-width: 900px;
+    width: 300px;
+}
+
+.container-pop-up {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.411);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+}
+
+.pop-up {
+    animation: aparecer 0.3s ease;
+    position: absolute;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid var(--primary);
+    top: 40%;
+    right: 40%;
+    padding: 20px;
+    text-align: center;
+    max-height: 1200px;
+    height: 30vh;
+    background: var(--fundo-card);
+    border-radius: 6px;
+    border: 1.5px solid var(--primary);
+    /* backdrop-filter: blur(8px); */
+}
+
+@keyframes aparecer {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.pop-up i {
+    position: absolute;
+    top: 5%;
+    right: 35%;
+    font-size: 100px;
+    color: green;
+}
+
+.pop-up p {
+    margin-top: 7rem;
+    margin-bottom: 1rem;
+}
+
+.pop-up a {
+    color: var(--fundo-card);
+    background: linear-gradient(45deg, var(--primary), rgb(6, 6, 170));
+    border-radius: 6px;
+    max-width: 100px;
+    padding: 8px;
+}
