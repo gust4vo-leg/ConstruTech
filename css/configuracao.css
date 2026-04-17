@@ -248,3 +248,17 @@ body {
     max-width: 100px;
     padding: 8px;
 }
+
+.botao {
+    margin-left: 13%;
+}
+
+.botao button {
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: linear-gradient(45deg, var(--primary), rgb(7, 7, 172));
+    color: var(--fundo-card);
+    border-radius: 6px;
+}
