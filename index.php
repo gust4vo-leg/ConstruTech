@@ -24,7 +24,7 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
 
     <?php require_once('./partials/header.php') ?>
 
-    <?php if (!$logado): ?>
+    <!-- <?php if (!$logado): ?>
         <div id="loginModal" class="modal">
             <section>
                 <div class="card">
@@ -46,7 +46,7 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
                 </div>
             </section>
         </div>
-    <?php endif; ?>
+    <?php endif; ?> -->
 
     <main>
         <div class="container">

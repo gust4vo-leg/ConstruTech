@@ -1,64 +1,65 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<header class="topo">
+    <div class="topo-inner">
+        <a href="index.php" class="logo-link">
+            <img src="imagens/logo2.png" alt="ConstruTech" class="logo-img">
+        </a>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Constru Tech</title>
-    <link rel="icon" href="imagens/logo.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
-</head>
+        <nav class="topo-nav">
+            <a href="index.php"><i class="bi bi-house-fill"></i> Início</a>
+            <a href="tabela-tuch.php"><i class="bi bi-stack"></i> Inventário</a>
+            <a href="dashboard.php"><i class="bi bi-bar-chart-fill"></i> Dashboard</a>
+            <a href="configuracao.php"><i class="bi bi-sliders"></i> Config.</a>
+        </nav>
 
-<body>
-    <header class="topo">
-        <div class="topo-menu">
-            <div class="topo-esquerdo">
-                <a href="index.php">
-                    <img src="imagens/logo2.png" class="logo" alt="Logo">
-                </a>
-            </div>
-             <div class="topo-direito">
-                <a href="cadastro_produtos.php" class="">Adicionar Produto</a>
-            </div>
-
-            <a href="" onclick="exibir()" class="sidebar"><img src="./imagens/icon_sidebar.png"/></a>
-        </div>
-
-         <div class="navegacao" id="navegacao" style="display: none;">
-        <div class="container-voltar">
-            <a class="voltar" href="" onclick="location.reload()"> <i class="bi bi-escape"></i> </a>
-        </div>
-        <div class="perfil">
-            <i class="bi bi-person-circle"></i>
-
-            <h1>Nome Sobrenome</h1>
-        </div>
-
-        <div class="container-elementos">
-            <ul>
-                <li><a href="index.php"><i class="bi bi-house-fill"></i> &nbsp; Início</a></li>
-                <li><a href="tabela-tuch.php"><i class="bi bi-stack"></i> &nbsp; Inventário</a></li>
-                <li><a href="dashboard.php"><i class="bi bi-building-fill-gear"></i> &nbsp; Dashboard</a></li>
-                <li><a href=""><i class="bi bi-sliders"></i> &nbsp; Configurações</a></li>
-            </ul>
-        </div>
-
-        <div class="emergencia">
-            <a href=""><i class="bi bi-telephone-fill"></i></a>
+        <div class="topo-acoes">
+            <a href="cadastro_produtos.php" class="btn-header">
+                <i class="bi bi-plus-lg"></i> Novo Produto
+            </a>
         </div>
     </div>
 
-    <div class="preto" id="preto" style="display: none;"></div>
+    <!-- Sidebar mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <button class="sidebar-fechar" id="sidebarFechar"><i class="bi bi-x-lg"></i></button>
+        <div class="sidebar-perfil">
+            <i class="bi bi-person-circle"></i>
+            <p><?php echo !empty($_SESSION['usuario']) ? htmlspecialchars($_SESSION['usuario']) : 'Visitante'; ?></p>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.php"><i class="bi bi-house-fill"></i> Início</a>
+            <a href="tabela-tuch.php"><i class="bi bi-stack"></i> Inventário</a>
+            <a href="dashboard.php"><i class="bi bi-bar-chart-fill"></i> Dashboard</a>
+            <a href="configuracao.php"><i class="bi bi-sliders"></i> Configurações</a>
+            <a href="cadastro_produto.php"><i class="bi bi-plus-circle-fill"></i> Novo Produto</a>
+            <?php if (!empty($_SESSION['logado'])): ?>
+                <a href="logout.php" class="sidebar-sair"><i class="bi bi-box-arrow-right"></i> Sair</a>
+            <?php endif; ?>
+        </nav>
+    </aside>
+</header>
 
-    <script>
-        function exibir() {
-            event.preventDefault();
-            document.getElementById("navegacao").style.display = "block"
-            document.getElementById("preto").style.display = "block"
-            document.body.style.overflow = "hidden";
+<script>
+    (function() {
+        const btn = document.getElementById('btnMenu');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+        const fechar = document.getElementById('sidebarFechar');
+
+        function abrir() {
+            sidebar.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
         }
-    </script>
-    </header>
-</body>
 
-</html>
+        function fecharSidebar() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        if (btn) btn.addEventListener('click', abrir);
+        if (overlay) overlay.addEventListener('click', fecharSidebar);
+        if (fechar) fechar.addEventListener('click', fecharSidebar);
+    })();
+</script>
