@@ -51,7 +51,39 @@ require_once('init.php');
             </div>
 
             <div class="grafico">
-                
+                <div class="card-grafico-barras">
+                    <h1>Produtos por categoria</h1>
+                    <div class="grafico-barras">
+                        <div class="valores">
+                            <span>18</span>
+                            <span>15</span>
+                            <span>12</span>
+                            <span>9</span>
+                            <span>6</span>
+                            <span>3</span>
+                            
+                        </div>
+
+                        <span class="barras" style="height: 70%;"><h1>Bruto</h1></span> 
+
+                        <span class="barras" style="height: 40%;"><h1>Ferramentas</h1></span>
+
+                        <span class="barras" style="height: 60%;"><h1>Acabamento</h1></span>
+
+                        <span class="barras" style="height: 90%;"><h1>Total</h1></span>
+                    </div>
+                </div>
+
+                <div class="card-grafico-linha">
+                    <h1>Estoque por Categoria</h1>
+                    <div class="grafico-linha">
+                        <label>Bruto</label> <span class="medidor"></span> <span class="gambiarra" style="width: 50%;"></span>
+
+                        <label>Ferramentas</label> <span class="medidor"></span> <span class="gambiarra" style="width: 20%;"></span>
+
+                        <label>Acabamento</label> <span class="medidor"></span> <span class="gambiarra" style="width: 70%;"></span>
+                    </div>
+                </div>
             </div>
     </main>
 

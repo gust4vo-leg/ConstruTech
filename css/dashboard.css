@@ -2,7 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    /* font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; */
 }
 
 .titulo-dashboard{
@@ -37,8 +37,9 @@
     min-height: 80vh;
     height: 100%;
     display: flex;
-    justify-content: center;
-    /* flex-direction: column; */
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
     padding-bottom: 8vh;
 }
 
@@ -91,4 +92,122 @@
 
 .card span{
     color: orange;
+}
+
+.grafico{
+    gap: 1rem;
+    display: flex;
+    justify-content: left;
+    width: 55%;
+}
+
+.card-grafico-barras{
+    margin-top: 3rem;
+    background-color: white;
+    width: 75%;
+    height: 50vh;
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: ease 0.3s;
+}
+
+.card-grafico-barras h1{
+    text-align: center;
+    font-size: 1.4rem;
+    color: black;
+}
+
+.grafico-barras{
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid black;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    height: 80%;
+    width: 95%;
+    border-radius: 15px;
+}
+
+.barras{
+    margin-left: 5.5vw;
+    display: inline-flex;
+    width: 40px;
+    background: linear-gradient(to top, #f59e0b, #fbbf24);
+    justify-content: center;
+    align-items: flex-end;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px 5px 0 0;
+}
+
+.barras:hover{
+    opacity: 0.75;
+}
+
+.barras h1{
+    position: relative;
+    top: 3vh;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.valores{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.valores span{
+    text-align: center;
+    margin-left: -3rem;
+    margin-top: 3vh;
+}
+
+.card-grafico-linha{
+    margin-top: 3rem;
+    height: 50vh;
+    width: 23%;
+    border: 0px solid black;
+    border-radius: 15px;
+    background-color: rgb(2, 2, 71);
+    padding: 1rem;
+}
+
+.card-grafico-linha h1{
+    font-size: 1.3rem;
+    color: white;
+    text-align: center;
+}
+
+.grafico-linha{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grafico-linha label{
+    color: white;
+    margin-top: 5vh;
+    margin-bottom: 0.5rem;
+}
+
+.grafico-linha .medidor{
+    width: 100%;
+    display: inline-flex;
+    background: linear-gradient(to right, rgb(248, 162, 2), #00be39);
+    align-self: flex-start;
+    border-radius: 5px;
+    height: 0.6rem;
+}
+
+.grafico-linha .gambiarra{
+    display: flex;
+    z-index: 1000;
+    background: #a3a3a3;
+    align-self: flex-end;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    height: 0.6rem;
+    position: relative;
+    top: -0.6rem;
 }
