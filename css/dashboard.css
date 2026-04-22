@@ -51,6 +51,7 @@
 }
 
 .card{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     height: 20vh;
@@ -102,6 +103,7 @@
 }
 
 .card-grafico-barras{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 3rem;
     background-color: white;
     width: 75%;
@@ -164,6 +166,7 @@
 }
 
 .card-grafico-linha{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 3rem;
     height: 50vh;
     width: 23%;

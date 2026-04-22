@@ -110,3 +110,19 @@ main {
     font-size: 1.2rem;
     cursor: pointer;
 }
+
+.baixo {
+    color: #cc0000;
+    font-weight: 600;
+}
+
+
+.medio {
+    color: #e99300;
+    font-weight: 600;
+}
+
+.alto {
+    color: #0bf517;
+    font-weight: 600;
+}

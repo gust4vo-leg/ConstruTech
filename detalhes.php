@@ -45,12 +45,16 @@ require_once('./partials/header.php')
                 <a><?php echo $produto['categoria']?></a>
 
                 <form action="data.php" method="$_POST">
-                    <h3>Qtd. em estoque: &nbsp; <span class="verde"><i class="bi bi-plus-circle-fill"></i></span> &nbsp; <?php echo $produto['quantidade']?> &nbsp; <span class="vermelho"><i class="bi bi-dash-circle-fill"></i></span></h3>
+                    <h3>Qtd. em estoque: &nbsp; <span class="verde"><i class="bi bi-plus-circle-fill"></i></span> &nbsp;
+                    <strong class="<?php echo $produto['quantidade'] < 50 ? 'baixo' : (($produto['quantidade'] < 100) ? 'medio' : 'alto'); ?>"> <?php echo $produto['quantidade']?> </strong>
+                    &nbsp; <span class="vermelho"><i class="bi bi-dash-circle-fill"></i></span></h3>
                 </form>
             </div>
         </div>
     </div>
 </main>
+
+
 
 <?php 
 require_once('./partials/footer.php')

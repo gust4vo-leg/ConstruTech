@@ -84,7 +84,10 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
                     // echo '<pre>';
                     // print_r($_SESSION['produtos']);
                     // echo '</pre>';
+
                     foreach ($_SESSION['produtos'] as $produto) {
+
+                        $classe = $produto['quantidade'] < 50 ? 'baixo' : ($produto['quantidade'] < 100 ? 'medio' : 'alto');
 
                         if ($categoria_get != '' && $produto['categoria'] != $categoria_get) {
                             continue;
@@ -96,7 +99,9 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
                         <div class="detalhes-card">
                             <h1>' . $produto['nome'] . '</h1>
                             <h2>R$ ' . number_format($produto['preco'], 2, ',', '.') . '</h2>
-                            <h3>Qtd. em estoque: <span>' . $produto['quantidade'] . '</span></h3>
+                            <h3>Qtd. em estoque: 
+                                <span class="' . $classe . '">' . $produto['quantidade'] . '</span>
+                            </h3>
 
                             <a href="detalhes.php?id='. $produto['id'] .'" \'class="detalhes-btn">Ver detalhes</a>
                         </div>
