@@ -7,7 +7,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deletar_id'])) {
     $_SESSION['produtos'] = array_values(
         array_filter($_SESSION['produtos'], fn($p) => $p['id'] !== $del_id)
     );
-    header('Location: tabela.php');
+
+    $_SESSION['mensagem'] = "Produto excluído com sucesso!!";
+    header('Location: tabela-tuch.php');
     exit;
 }
 
@@ -47,6 +49,14 @@ foreach ($_SESSION['produtos'] as $p) {
                 </a>
             </div>
 
+            <?php if (isset($_SESSION['mensagem'])): ?>
+                <div class="alerta alerta-ok">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <?php echo $_SESSION['mensagem']; ?>
+                </div>
+                <?php unset($_SESSION['mensagem']); ?>
+            <?php endif; ?>
+
             <div class="tabela-wrapper">
                 <table class="tabela">
                     <thead>
@@ -61,7 +71,7 @@ foreach ($_SESSION['produtos'] as $p) {
                     </thead>
                     <tbody>
                         <?php foreach ($_SESSION['produtos'] as $p): ?>
-                            <tr>
+                            <tr> 
                                 <td class="td-nome">
                                     <a href="detalhes.php?id=<?php echo $p['id']; ?>">
                                         <?php echo htmlspecialchars($p['nome']); ?>
@@ -80,6 +90,8 @@ foreach ($_SESSION['produtos'] as $p) {
                                     <a href="detalhes.php?id=<?php echo $p['id']; ?>" class="btn-acao btn-ver" title="Ver detalhes">
                                         <i class="bi bi-eye-fill"></i>
                                     </a>
+
+                                    <!-- deletar -->
                                     <form method="POST" style="display:inline"
                                         onsubmit="return confirm('Deletar <?php echo htmlspecialchars($p['nome']); ?>?')">
                                         <input type="hidden" name="deletar_id" value="<?php echo $p['id']; ?>">
@@ -87,6 +99,7 @@ foreach ($_SESSION['produtos'] as $p) {
                                             <i class="bi bi-trash3-fill"></i>
                                         </button>
                                     </form>
+                                    <!-- ------------ -->
                                 </td>
                             </tr>
                         <?php endforeach; ?>

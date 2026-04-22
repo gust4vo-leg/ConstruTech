@@ -95,7 +95,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
                     </section>
 
-                    <!-- SEO -->
                     <section class="cfg-section">
                         <div class="cfg-section-topo">
                             <i class="bi bi-search"></i>
@@ -134,6 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </section>
                 </div>
 
+                <!-- Salvar  Configuração -->
                 <div class="cfg-footer">
                     <button type="submit" class="btn-primary">
                         <i class="bi bi-floppy-fill"></i> Salvar configurações
