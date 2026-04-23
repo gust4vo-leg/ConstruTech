@@ -1,6 +1,37 @@
 <?php
 require_once('init.php');
 
+$totalQuantidade = 0;
+$totalUnitario = 0;
+$total = 0;
+
+foreach ($produtos_base as $produto) {
+    $totalQuantidade += $produto['quantidade'];
+};
+
+foreach ($produtos_base as $produto) {
+    $total += $produto['preco'] * $produto['quantidade'];
+};
+
+$valorMedio = $total / $totalQuantidade;
+
+$totalBruto = 0;
+
+$totalFerramentas = 0;
+
+$totalAcabamento = 0;
+
+foreach ($produtos_base as $produto) {
+    if ($produto['categoria'] === 'bruto') {
+        $totalBruto ++;
+    }
+    elseif ($produto['categoria'] === 'ferramentas') {
+        $totalFerramentas ++;
+    }
+    else {
+        $totalAcabamento ++;
+    }
+};
 
 ?>
 
@@ -32,7 +63,7 @@ require_once('init.php');
                         <h1>Qtd. de itens em estoque</h1>
                         <span><i class="bi bi-clipboard2-data-fill"></i></span>
                     </div>
-                    <h2>1067</h2>
+                    <h2><?php echo $totalQuantidade?></h2>
                 </div>
 
                 <div class="card">
@@ -40,7 +71,7 @@ require_once('init.php');
                         <h1>Valor do estoque</h1>
                         <span><i class="bi bi-cash-coin"></i></span>
                     </div>
-                    <h2>R$ 5092,00</h2>
+                    <h2>R$ <?php echo number_format($total, 2, ',', '.') ?></h2>
                 </div>
 
                 <div class="card">
@@ -48,7 +79,7 @@ require_once('init.php');
                     <h1>Valor médio por produto</h1>
                     <span><i class="bi bi-clipboard2-pulse-fill"></i></span>
                 </div>
-                <h2>R$ 1067,00</h2>
+                <h2>R$ <?php echo number_format($valorMedio, 2, ',', '.') ?></h2>
             </div>
             </div>
 
@@ -57,33 +88,33 @@ require_once('init.php');
                     <h1>Produtos por categoria</h1>
                     <div class="grafico-barras">
                         <div class="valores">
-                            <span>18</span>
+                            <span>25</span>
+                            <span>20</span>
                             <span>15</span>
-                            <span>12</span>
-                            <span>9</span>
-                            <span>6</span>
-                            <span>3</span>
+                            <span>10</span>
+                            <span>5</span>
+                            <span>0</span>
                             
                         </div>
 
-                        <span class="barras" style="height: 70%;"><h1>Bruto</h1></span> 
+                        <span class="barras" style="height: <?php echo ($totalBruto / 25) * 100?>%;"><h1>Bruto</h1></span> 
 
-                        <span class="barras" style="height: 40%;"><h1>Ferramentas</h1></span>
+                        <span class="barras" style="height: <?php echo ($totalFerramentas / 25) * 100?>%;"><h1>Ferramentas</h1></span>
 
-                        <span class="barras" style="height: 60%;"><h1>Acabamento</h1></span>
+                        <span class="barras" style="height: <?php echo ($totalAcabamento / 25) * 100?>%;"><h1>Acabamento</h1></span>
 
-                        <span class="barras" style="height: 90%;"><h1>Total</h1></span>
+                        <span class="barras" style="height: <?php echo (($totalBruto / 25) * 100) + (($totalFerramentas / 25) * 100) + (($totalAcabamento/ 25) * 100)?>%;"><h1>Total</h1></span>
                     </div>
                 </div>
 
                 <div class="card-grafico-linha">
                     <h1>Estoque por Categoria</h1>
                     <div class="grafico-linha">
-                        <label>Bruto</label> <span class="medidor"></span> <span class="gambiarra" style="width: 50%;"></span>
+                        <label>Bruto</label> <span class="medidor"></span> <span class="gambiarra" style="width: <?php echo ($totalBruto / 18) * 100?>%;"></span>
 
-                        <label>Ferramentas</label> <span class="medidor"></span> <span class="gambiarra" style="width: 20%;"></span>
+                        <label>Ferramentas</label> <span class="medidor"></span> <span class="gambiarra" style="width: <?php echo ($totalFerramentas / 18) * 100?>%;"></span>
 
-                        <label>Acabamento</label> <span class="medidor"></span> <span class="gambiarra" style="width: 70%;"></span>
+                        <label>Acabamento</label> <span class="medidor"></span> <span class="gambiarra" style="width: <?php echo ($totalAcabamento / 18) * 100?>%;"></span>
                     </div>
                 </div>
             </div>

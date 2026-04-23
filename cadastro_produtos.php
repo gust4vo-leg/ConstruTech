@@ -1,3 +1,7 @@
+<?php 
+require_once 'init.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -25,7 +29,7 @@
                 <form action="">
                     <input type="text" class="nome" placeholder="*Nome Completo">
                     <input type="text" class="preco-qtd" placeholder="*Preço">
-                    <input type="text" class="preco-qtd" placeholder="*Qtd. em estoque"> <br>
+                    <input type="text" class="preco-qtd" placeholder="*Qtd. em estoque" style="margin-left: 0.3rem;"> <br>
 
                     <select name="" id="">
                         <option value="">Selecione a categoria</option>

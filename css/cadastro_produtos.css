@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 main{
@@ -17,18 +20,18 @@ main{
     margin-bottom: 12vh;
     width: 52vw;
     height: 55vh;
-    border: 3px solid orange;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     background-color: rgb(2, 2, 71);
-    border-radius: 15px;
+    border-radius: 8px;
     overflow: hidden;
 }
 
 .fundo-branco{
     height: 100%;
-    border: 0px solid;
     width: 45%;
     background-color: white;
     display: flex;
+    border: 5px solid white;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -81,8 +84,14 @@ input:focus{
     border-radius: 8px;
     border: 0;
     padding: 0.5rem;
-    width: 39.5%;
+    width: 39%;
     margin-top: 1rem;
+}
+
+.container-preco-qtd{
+    display: flex;
+    gap: 20px;
+    margin: 0;
 }
 
 select{
@@ -115,11 +124,12 @@ textarea {
     padding: 0.5rem;
     width: 80%;
     height: 8vh;
+    resize: none;
 }
 
 textarea:focus{
-    box-shadow: 0 0 15px orange;
-    outline: 1px solid orange;
+    box-shadow: 0 0 15px #ea6a00;
+    outline: 1px solid #ea6a00;
 }
 
 .container-btn{
@@ -129,12 +139,12 @@ textarea:focus{
     width: 10%;
     margin-top: 1rem;
     justify-self: center;
-    color: orange;
+    color: #ea6a00;
 }
 
 button.btn {
     justify-self: center;
-    background-color: orange;
+    background-color: #ea6a00;
     color: white;
     font-weight: bold;
     padding: 0.8rem;
@@ -146,5 +156,5 @@ button.btn {
 }
 
 button.btn:hover{
-    transform: scale(1.05);
+    background-color: #ea6900ce;
 }

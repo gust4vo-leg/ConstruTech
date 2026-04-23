@@ -38,6 +38,10 @@ require_once('./partials/header.php')
             <div class="container-info">
                 <h1><?php echo $produto['nome']?></h1>
 
+                <span class="id"><b style="font-weight: 500;">Código (ID):</b> <?php echo $produto['id']?></span>
+
+                <hr>
+
                 <strong>R$ <?php echo number_format($produto['preco'], 2, ',','.')?></strong>
 
                 <h2>Categoria:</h2>
@@ -46,9 +50,11 @@ require_once('./partials/header.php')
 
                 <form action="data.php" method="$_POST">
                     <h3>Qtd. em estoque: &nbsp; <span class="verde"><i class="bi bi-plus-circle-fill"></i></span> &nbsp;
-                    <strong class="<?php echo $produto['quantidade'] < 50 ? 'baixo' : (($produto['quantidade'] < 100) ? 'medio' : 'alto'); ?>"> <?php echo $produto['quantidade']?> </strong>
+                    <?php echo $produto['quantidade']?>
                     &nbsp; <span class="vermelho"><i class="bi bi-dash-circle-fill"></i></span></h3>
                 </form>
+
+                <h4 class="alerta" style="display:<?php echo ($produto['quantidade'] <= 70) ? "block" : "none"?>;"> <i class="bi bi-exclamation-circle"></i> &nbsp;Estoque baixo</h4>
             </div>
         </div>
     </div>
