@@ -165,7 +165,7 @@ nav a {
 
 .container-cards {
     max-width: 1700px;
-    margin: 0 auto;
+    margin: -50px auto;
     padding: 60px 40px;
 }
 

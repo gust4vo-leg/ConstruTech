@@ -4,8 +4,8 @@ require_once('init.php');
 // session_destroy();
 // session_start();
 // $_SESSION['produtos'] = $produtos_base;
-
-$logado = isset($_SESSION['logado']) ? $_SESSION['logado'] : false;
+$logado = isset($_SESSION['admin']);
+// $logado = isset($_SESSION['logado']) ? $_SESSION['logado'] : false;
 $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
 ?>
 
@@ -24,12 +24,12 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
 
     <?php require_once('./partials/header.php') ?>
 
-    <!-- <?php if (!$logado): ?>
+   <?php if (!$logado): ?>
         <div id="loginModal" class="modal">
             <section>
                 <div class="card">
                     <h4>Login</h4>
-                    <form id="formLogin">
+                    <form id="formLogin" method="POST" action="login.php">
                         <div class="input-box">
                             <input type="text" name="nome" required>
                             <label>Nome Completo</label>
@@ -39,16 +39,18 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
                             <label>Senha</label>
                         </div>
 
-                        <button class="btn-login"type="submit">Entrar</button>
+                        <?php if (isset($_SESSION['erro'])): ?>
+                            <p style="color:red;"><?php echo $_SESSION['erro']; ?></p>
+                            <?php unset($_SESSION['erro']); ?>
+                        <?php endif; ?>
 
-                        <p class="p-login">Ainda não tem conta? <a class="a-login" href="cadastro.php">Criar conta</a></p>
-                    </form>
+                        <button class="btn-login" type="submit">Entrar</button>
                 </div>
             </section>
         </div>
-    <?php endif; ?> -->
+    <?php endif; ?>
 
-    <main>
+    <main class="<?php echo !$logado ? 'bloqueado' : ''; ?>">
         <div class="container">
             <nav>
                 <ul class="filtro">
@@ -115,8 +117,6 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
             </section>
         </div>
     </main>
-
-    <script src="java/login.js"></script>
 
     <?php require_once('./partials/footer.php') ?>
 
