@@ -1,4 +1,8 @@
 <?php
+
+require_once 'init.php';
+
+
 // Calcula estatísticas do rodapé a partir da sessão
 $produtos_footer = isset($_SESSION['produtos']) ? $_SESSION['produtos'] : [];
 $total_valor = 0;
@@ -13,8 +17,9 @@ foreach ($produtos_footer as $pf) {
     $soma_precos += $pf['preco'];
     if ($mais_caro   === null || $pf['preco'] > $mais_caro['preco'])   $mais_caro   = $pf;
     if ($mais_barato === null || $pf['preco'] < $mais_barato['preco']) $mais_barato = $pf;
-}
-$media = count($produtos_footer) > 0 ? $soma_precos / count($produtos_footer) : 0;
+};
+
+$media = $total_valor / $total_qtd;
 
 $cats = ['bruto' => [], 'ferramentas' => [], 'acabamento' => []];
 foreach ($produtos_footer as $pf) {
