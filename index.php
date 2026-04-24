@@ -13,6 +13,7 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/header_footer.css">
+    <link rel="icon" href="imagens/logo.png">
     <title>Home - ConstruTech</title>
 </head>
 

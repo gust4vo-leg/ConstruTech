@@ -27,6 +27,38 @@ foreach ($produtos_footer as $pf) {
         $cats[$pf['categoria']][] = $pf['nome'];
     }
 }
+
+$totalQuantidade = 0;
+$totalUnitario = 0;
+$total = 0;
+
+foreach ($produtos_base as $produto) {
+    $totalQuantidade += $produto['quantidade'];
+};
+
+foreach ($produtos_base as $produto) {
+    $total += $produto['preco'] * $produto['quantidade'];
+};
+
+$valorMedio = $total / $totalQuantidade;
+
+$totalBruto = 0;
+
+$totalFerramentas = 0;
+
+$totalAcabamento = 0;
+
+foreach ($produtos_base as $produto) {
+    if ($produto['categoria'] === 'bruto') {
+        $totalBruto ++;
+    }
+    elseif ($produto['categoria'] === 'ferramentas') {
+        $totalFerramentas ++;
+    }
+    else {
+        $totalAcabamento ++;
+    }
+};
 ?>
 <footer class="rodape">
     <div class="rodape-grid">
