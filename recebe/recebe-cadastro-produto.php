@@ -9,7 +9,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $quantidade = $_POST['quantidade']?? '';
     $categoria = $_POST['categoria']?? '';
     $imagem = $_POST['imagem']?? '';
-    $id = $_POST['id']?? '';
+
+    $ids = array_column($_SESSION['produtos'], 'id');
+    $novoId = $ids ? max($ids) + 1 : 1; 
 
     $produto = [
         'nome' => $nome,
@@ -17,7 +19,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         'quantidade' => $quantidade,
         'categoria' => $categoria,
         'imagem' => $imagem,
-        'id' => $id
+        'id' => $novoId
     ];
 
     $_SESSION['produtos'][] = $produto;

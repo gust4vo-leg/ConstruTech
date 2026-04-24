@@ -1,5 +1,7 @@
 <?php 
 require_once 'init.php';
+
+
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +41,7 @@ require_once 'init.php';
                     </select>
 
                     <input type="text" class="url" placeholder="*URL da imagem" name="imagem">
-                    <input name="id" class="url" placeholder="*Código do produto (ID)"> <br>
+                    <textarea class="url" placeholder="*Descrição do produto"></textarea><br>
 
                     <div class="container-btn">
                         <button class="btn" type="submit">Enviar</button>

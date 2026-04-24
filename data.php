@@ -170,3 +170,5 @@ $produtos_base = [
         'preco_total' => 2673.30
     ],
 ];
+
+$busca = isset($_GET['busca']) ? strtolower($_GET['busca']) : '';

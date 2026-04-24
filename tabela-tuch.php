@@ -1,11 +1,19 @@
 <?php
 require_once 'init.php';
 
+$pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+$por_pagina = 5;
+$inicio = ($pagina - 1) * $por_pagina;
+$produtos = array_slice($_SESSION['produtos'], $inicio, $por_pagina);
+
+$total_produtos = count($_SESSION['produtos']);
+$total_paginas = ceil($total_produtos / $por_pagina);
+
 // Deletar produto
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deletar_id'])) {
-    $del_id = (int)$_POST['deletar_id'];
+    $del_id = $_POST['deletar_id'];
     $_SESSION['produtos'] = array_values(
-        array_filter($_SESSION['produtos'], fn($p) => $p['id'] !== $del_id)
+        array_filter($_SESSION['produtos'], fn($p) => $p['id'] != $del_id)
     );
 
     $_SESSION['mensagem'] = "Produto excluído com sucesso!!";
@@ -70,8 +78,8 @@ foreach ($_SESSION['produtos'] as $p) {
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($_SESSION['produtos'] as $p): ?>
-                            <tr> 
+                        <?php foreach ($produtos as $p): ?>
+                            <tr>
                                 <td class="td-nome">
                                     <a href="detalhes.php?id=<?php echo $p['id']; ?>">
                                         <?php echo htmlspecialchars($p['nome']); ?>
@@ -118,6 +126,26 @@ foreach ($_SESSION['produtos'] as $p) {
                         </tr>
                     </tfoot>
                 </table>
+            </div>
+            <div class="paginacao">
+                <div class="seta">
+                    <?php if ($pagina > 1): ?>
+                        <a class="seta" href="?pagina=<?php echo $pagina - 1; ?>"><i class="bi bi-arrow-left"></i></a>
+                    <?php endif; ?>
+                </div>
+                <div class="box-num">
+                    <?php for ($i = 1; $i <= $total_paginas; $i++): ?>
+                        <a href="?pagina=<?php echo $i; ?>"
+                            class="<?php echo $i == $pagina ? 'ativo' : ''; ?>">
+                            <?php echo $i; ?>
+                        </a>
+                    <?php endfor; ?>
+                </div>
+                <div class="seta">
+                    <?php if ($pagina < $total_paginas): ?>
+                        <a class="seta" href="?pagina=<?php echo $pagina + 1; ?>"><i class="bi bi-arrow-right"></i></a>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
     </main>

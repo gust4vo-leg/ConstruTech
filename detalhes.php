@@ -3,6 +3,17 @@ require_once 'init.php';
 
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
+
+$ids = array_column($_SESSION['produtos'], 'id');
+
+$index = array_search($id, $ids);
+
+$produto = $_SESSION['produtos'][$index];
+
+if ($index != false) {
+    $produto = $_SESSION['produtos'][$index];
+};
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['acao'])) {
     foreach ($_SESSION['produtos'] as &$p) {
         if ($p['id'] === $id) {

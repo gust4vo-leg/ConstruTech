@@ -44,6 +44,7 @@ foreach ($produtos_base as $produto) {
     <title>Dashboard - ConstruTech</title>
     <link rel="stylesheet" href="./css/dashboard.css">
     <link rel="stylesheet" href="./css/header_footer.css">
+    <link rel="icon" href="imagens/logo.png">
 </head>
 
 <body>

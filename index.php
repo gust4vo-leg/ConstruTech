@@ -25,7 +25,7 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
     <div id="modalLogin" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Login">
         <div class="modal-card">
             <div class="modal-header">
-                <img src="imagens/logo2.png" alt="ConstruTech" class="modal-logo">
+                <img src="imagens/logo.png" alt="ConstruTech" class="modal-logo">
                 <h2>Bem-vindo de volta</h2>
                 <p>Faça login para acessar o sistema</p>
             </div>
