@@ -10,8 +10,22 @@ main {
     background-color: whitesmoke;
 }
 
+.voltar-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-m);
+    font-size: .9rem;
+    transition: var(--transition);
+}
+
+.voltar-link:hover {
+    color: var(--orange);
+}
+
+
 .box-container{
-    min-height: 80vh;
+    min-height: 60vh;
     width: 100%;
     height: 100%;
     display: flex;
@@ -61,11 +75,11 @@ main {
     display: flex;
     flex-direction: column;
     align-content: center;
-    margin-top: 11vh;
+    margin-top: 7vh;
 }
 
 .container-info h1{
-    font-size: 1.3rem;
+    font-size: 25px;
 }
 
 .container-info .id{
@@ -84,7 +98,17 @@ hr{
 
 .container-info strong{
     margin-top: 5%;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
+}
+
+.detalhe-total {
+    font-size: 0.9rem;
+    color: var(--text-m);
+}
+
+.detalhe-total strong {
+    color: var(--orange);
+    font-size: 0.9rem;
 }
 
 .container-info h2{
@@ -113,25 +137,38 @@ hr{
     color: black;
     font-weight: normal;
     margin-top: 5%;
+    font-weight: 600;
 }
 
 .container-info h4{
     margin-top: 5%;
     font-size: 1rem;
-    color: rgb(212, 144, 16);
+    color: #cc0000;
     font-weight: normal;
+}
+
+.quantidade-card button {
+    outline: none;
+    border: none;
+}
+
+.estoque-num {
+    font-size: 1.3rem;
+    font-weight: 600;
 }
 
 .verde{
     color: green;
-    font-size: 1rem;
+    font-size: 20px;
     cursor: pointer;
+    margin-left: 10px;
 }
 
 .vermelho {
-    font-size: 1rem;
+    font-size: 20px;
     color: #cc0000;
     cursor: pointer;
+    margin-right: 10px;
 }
 
 .baixo {

@@ -1,11 +1,7 @@
 <?php
 require_once('init.php');
 
-// session_destroy();
-// session_start();
-// $_SESSION['produtos'] = $produtos_base;
 $logado = isset($_SESSION['admin']);
-// $logado = isset($_SESSION['logado']) ? $_SESSION['logado'] : false;
 $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
 ?>
 
@@ -24,30 +20,37 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
 
     <?php require_once('./partials/header.php') ?>
 
-   <?php if (!$logado): ?>
-        <div id="loginModal" class="modal">
-            <section>
-                <div class="card">
-                    <h4>Login</h4>
-                    <form id="formLogin" method="POST" action="login.php">
-                        <div class="input-box">
-                            <input type="text" name="nome" required>
-                            <label>Nome Completo</label>
-                        </div>
-                        <div class="input-box">
-                            <input type="password" name="senha" required>
-                            <label>Senha</label>
-                        </div>
-
-                        <?php if (isset($_SESSION['erro'])): ?>
-                            <p style="color:red;"><?php echo $_SESSION['erro']; ?></p>
-                            <?php unset($_SESSION['erro']); ?>
-                        <?php endif; ?>
-
-                        <button class="btn-login" type="submit">Entrar</button>
+    <?php if (!$logado): ?>
+    <div id="modalLogin" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Login">
+        <div class="modal-card">
+            <div class="modal-header">
+                <img src="imagens/logo2.png" alt="ConstruTech" class="modal-logo">
+                <h2>Bem-vindo de volta</h2>
+                <p>Faça login para acessar o sistema</p>
+            </div>
+            <form id="formLogin" novalidate>
+                <div class="campo-form">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Ex: Admin" required autocomplete="username">
                 </div>
-            </section>
+                <div class="campo-form">
+                    <label for="senha">Senha</label>
+                    <div class="input-senha">
+                        <input type="password" id="senha" name="senha" placeholder="••••••••" required autocomplete="current-password">
+                        <button type="button" class="toggle-senha" id="toggleSenha" aria-label="Mostrar senha">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <p id="erroLogin" class="erro-msg" style="display:none"></p>
+                <button type="submit" class="btn-primary" id="btnLogin">
+                    <span>Entrar</span>
+                    <i class="bi bi-arrow-right"></i>
+                </button>
+            </form>
+            <p class="modal-hint">Use: <strong>Admin</strong> / <strong>admin123</strong></p>
         </div>
+    </div>
     <?php endif; ?>
 
     <main class="<?php echo !$logado ? 'bloqueado' : ''; ?>">
@@ -79,14 +82,8 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
 
         <div class="container-cards">
             <section id="produtos">
-
                 <div class="grid-produtos">
-
                     <?php
-                    // echo '<pre>';
-                    // print_r($_SESSION['produtos']);
-                    // echo '</pre>';
-
                     foreach ($_SESSION['produtos'] as $produto) {
 
                         $classe = $produto['quantidade'] < 50 ? 'baixo' : ($produto['quantidade'] < 100 ? 'medio' : 'alto');
@@ -104,21 +101,20 @@ $categoria_get = isset($_GET['categoria']) ? trim($_GET['categoria']) : '';
                             <h3>Qtd. em estoque: 
                                 <span class="' . $classe . '">' . $produto['quantidade'] . '</span>
                             </h3>
-
-                            <a href="detalhes.php?id='. $produto['id'] .'" \'class="detalhes-btn">Ver detalhes</a>
+                            <a href="detalhes.php?id=' . $produto['id'] . '" class="detalhes-btn">Ver detalhes</a>
                         </div>
                     </article>
                     ';
                     }
                     ?>
-
                 </div>
-
             </section>
         </div>
     </main>
 
     <?php require_once('./partials/footer.php') ?>
+
+    <script src="./js/login.js"></script>
 
 </body>
 
